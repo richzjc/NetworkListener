@@ -19,6 +19,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
     @NetLose
     public void test(){
         Toast.makeText(this, "没有网络了", Toast.LENGTH_LONG).show();
