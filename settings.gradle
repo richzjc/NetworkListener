@@ -1,0 +1,5 @@
+rootProject.name='net'
+include ':app'
+include ':netannotation'
+include ':netCompiler'
+include ':network'
