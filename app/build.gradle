@@ -38,10 +38,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.navigation:navigation-fragment:2.2.1'
     implementation 'androidx.navigation:navigation-ui:2.2.1'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation project(path: ':netannotation')
-    annotationProcessor project(path: ':netCompiler')
-    implementation project(path: ':network')
+    annotationProcessor 'com.richzjc:netChange_compiler:1.0.5'
+    implementation 'com.richzjc:network_change:1.0.5'
 }

@@ -1,4 +1,26 @@
 apply plugin: 'com.android.library'
+//apply plugin: 'com.novoda.bintray-release' // must be applied after your artifact generating plugin (eg. java / com.android.library)
+//
+//publish {
+//    userOrg = 'richzjc'
+//    groupId = 'com.richzjc'
+//    artifactId = 'network_change'
+//    publishVersion = '1.0.5'
+//    desc = '监听网络的变化'
+//    website = 'https://github.com/novoda/bintray-release'
+//}
+//
+//buildscript {
+//    repositories {
+//        mavenCentral()
+//        google()
+//        jcenter()
+//    }
+//    dependencies {
+//        classpath 'com.novoda:bintray-release:0.9.1'
+//    }
+//}
+
 
 android {
     compileSdkVersion 29
@@ -25,10 +47,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation project(path: ':netannotation')
+    api 'com.richzjc:network_annotation:1.0.5'
 }

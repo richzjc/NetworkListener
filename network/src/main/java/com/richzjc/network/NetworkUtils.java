@@ -1,6 +1,5 @@
 package com.richzjc.network;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -12,10 +11,6 @@ import com.richzjc.netannotation.nettype.NetType;
 
 public class NetworkUtils {
 
-    /**
-     * 网络是否可用
-     */
-    @SuppressLint("MissingPermission")
     public static boolean isNetworkAvailable(Context context) {
         ConnectivityManager connMgr = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connMgr == null) return false;
@@ -31,10 +26,6 @@ public class NetworkUtils {
         return false;
     }
 
-    /**
-     * 获取当前的网络类型：<br/> -1：没有网络 <br/>1：WIFI网络<br/>2：wap 网络<br/>3：net网络
-     */
-    @SuppressLint("MissingPermission")
     public static NetType getNetWorkType(Context context) {
         ConnectivityManager connMgr = (ConnectivityManager) context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -54,9 +45,6 @@ public class NetworkUtils {
         return NetType.NONE;
     }
 
-    /**
-     * 打开网络设置界面
-     */
     public static void openSetting(Context context, int requestCode) {
         Intent intent = new Intent("/");
         ComponentName cm = new ComponentName("com.android.settings",
