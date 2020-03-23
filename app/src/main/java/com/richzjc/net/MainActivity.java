@@ -18,6 +18,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import app.NetChanger;
+
 public class MainActivity extends AppCompatActivity {
 
     @NetLose
@@ -43,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        NetManager.addIndex(new MyEventBusIndex());
+        NetManager.addIndex(new NetChanger());
         NetManager.init(this);
         NetManager.bind(this);
         setContentView(R.layout.activity_main);
