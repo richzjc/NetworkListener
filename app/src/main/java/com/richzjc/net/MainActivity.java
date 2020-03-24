@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.richzjc.app.NetChanger;
 import com.richzjc.netannotation.NetAvailable;
 import com.richzjc.netannotation.NetChange;
 import com.richzjc.netannotation.NetLose;
@@ -18,7 +19,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import app.NetChanger;
 
 public class MainActivity extends AppCompatActivity {
 
