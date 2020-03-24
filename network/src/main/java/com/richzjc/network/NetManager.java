@@ -44,9 +44,7 @@ public class NetManager {
     }
 
     public static void unBind(Object object) {
-        if(subscribeInfos.containsKey(object)){
-            subscribeInfos.remove(object);
-        }
+        subscribeInfos.remove(object);
     }
 
     public static void notifySingle(Object obj, SimpleSubscribeInfo info) {

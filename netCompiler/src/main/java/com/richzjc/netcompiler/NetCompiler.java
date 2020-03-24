@@ -62,6 +62,7 @@ public class NetCompiler extends AbstractProcessor {
 
     private void parsePackage(ProcessingEnvironment processingEnv) {
         packageName = processingEnv.getOptions().get("moduleName");
+        packageName = "com.richzjc." + packageName.toLowerCase();
         if (!EmptyUtils.isEmpty(packageName)) {
             className = "NetChanger";
         }

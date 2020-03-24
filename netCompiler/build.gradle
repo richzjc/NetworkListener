@@ -5,7 +5,7 @@ publish {
     userOrg = 'richzjc'
     groupId = 'com.richzjc'
     artifactId = 'netChange_compiler'
-    publishVersion = '1.0.7'
+    publishVersion = '1.0.8'
     desc = '监听网络的变化'
     website = 'https://github.com/novoda/bintray-release'
 }
