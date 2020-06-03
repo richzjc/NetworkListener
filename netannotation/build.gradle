@@ -1,12 +1,12 @@
 apply plugin: 'java-library'
-//
+
 //apply plugin: 'com.novoda.bintray-release' // must be applied after your artifact generating plugin (eg. java / com.android.library)
 //
 //publish {
 //    userOrg = 'richzjc'
 //    groupId = 'com.richzjc'
 //    artifactId = 'network_annotation'
-//    publishVersion = '1.0.5'
+//    publishVersion = '1.0.6'
 //    desc = '监听网络的变化'
 //    website = 'https://github.com/novoda/bintray-release'
 //}
