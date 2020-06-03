@@ -6,7 +6,7 @@ apply plugin: 'java-library'
 //    userOrg = 'richzjc'
 //    groupId = 'com.richzjc'
 //    artifactId = 'network_annotation'
-//    publishVersion = '1.0.6'
+//    publishVersion = '1.0.7'
 //    desc = '监听网络的变化'
 //    website = 'https://github.com/novoda/bintray-release'
 //}
