@@ -21,10 +21,48 @@ android {
         }
     }
 
+    signingConfigs {
+        debug {
+            storeFile file("../net.jks")
+            storePassword MEDUSA_KEYSTORE_PASS
+            keyAlias MEDUSA_ALIAS_NAME
+            keyPassword MEDUSA_ALIAS_PASS
+            v2SigningEnabled true
+        }
+
+        release {
+            storeFile file("../net.jks")
+            storePassword MEDUSA_KEYSTORE_PASS
+            keyAlias MEDUSA_ALIAS_NAME
+            keyPassword MEDUSA_ALIAS_PASS
+            v2SigningEnabled true
+        }
+    }
+
     buildTypes {
         release {
+            debuggable false
+            signingConfig signingConfigs.release
+            //是否混淆
+            minifyEnabled true
+            //disZipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            jniDebuggable false
+            versionNameSuffix "-debug"
+            signingConfig signingConfigs.debug
+            //是否混淆
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            //Zipalign优化
+            zipAlignEnabled false
+            // 移除无用的resource文件
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
