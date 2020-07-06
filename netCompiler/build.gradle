@@ -5,7 +5,7 @@ apply plugin: 'java-library'
 //    userOrg = 'richzjc'
 //    groupId = 'com.richzjc'
 //    artifactId = 'netChange_compiler'
-//    publishVersion = '1.1.1'
+//    publishVersion = '1.1.2'
 //    desc = '监听网络的变化'
 //    website = 'https://github.com/novoda/bintray-release'
 //}
@@ -25,7 +25,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     compileOnly 'com.google.auto.service:auto-service:1.0-rc6'
     annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
-    implementation 'com.richzjc:network_annotation:1.0.8'
+    implementation 'com.richzjc:network_annotation:1.0.9'
     implementation 'com.squareup:javapoet:1.12.1'
 }
 

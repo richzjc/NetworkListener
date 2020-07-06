@@ -11,6 +11,7 @@ import com.richzjc.netannotation.NetLose;
 import com.richzjc.netannotation.nettype.NetType;
 import com.richzjc.network.NetManager;
 
+import androidx.annotation.Keep;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -19,7 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-
+@Keep
 public class MainActivity extends AppCompatActivity {
 
     @NetLose
