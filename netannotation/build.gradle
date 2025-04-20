@@ -28,14 +28,14 @@ publishing {
             pom {
                 name = "netannotation"  // 项目名称
                 description = "运用编译时 注解生成代码，所用到的注解"  // 项目描述
-                url = "git@github.com:richzjc/st.git"  // 项目URL
+                url = "git@github.com:richzjc/NetworkListener.git"  // 项目URL
 
                 // 开发者信息
                 developers {
                     developer {
-                        id = "your_id"
-                        name = "Your Name"
-                        email = "your@email.com"
+                        id = "richzjc"
+                        name = "richzjc"
+                        email = "richzjc130109@gmail.com"
                     }
                 }
 
@@ -49,9 +49,9 @@ publishing {
 
                 // SCM（版本控制地址）
                 scm {
-                    connection = "scm:git:git://github.com/example/mylibrary.git"
-                    developerConnection = "scm:git:ssh://github.com/example/mylibrary.git"
-                    url = "https://github.com/example/mylibrary"
+                    connection = "scm:git:git@github.com:richzjc/NetworkListener.git"
+                    developerConnection = "scm:git:ssh://github.com:richzjc/NetworkListener.git"
+                    url = "https://github.com/richzjc/NetworkListener.git"
                 }
             }
         }

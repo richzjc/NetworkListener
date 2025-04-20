@@ -22,6 +22,9 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.7">
       <module name="net.app" target="21" />
+      <module name="net.netannotation" target="21" />
+      <module name="net.netannotation.main" target="21" />
+      <module name="net.netannotation.test" target="21" />
       <module name="net.network" target="21" />
     </bytecodeTargetLevel>
   </component>
