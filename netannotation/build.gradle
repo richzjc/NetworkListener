@@ -7,5 +7,67 @@ dependencies {
 
 }
 
-sourceCompatibility = "7"
-targetCompatibility = "7"
+apply plugin: 'maven-publish'
+
+publishing {
+    publications {
+        // 创建一个 Maven 发布任务
+        release(MavenPublication) {
+            // 设置 groupId, artifactId, 版本等
+            groupId = 'io.github.richzjc'
+            artifactId = 'net_annotation'
+            version = '1.0.0'
+            // 指定发布 AAR 文件
+            afterEvaluate {
+                // 发布 AAR 文件
+                artifact("$buildDir/libs/${project.name}.jar")
+            }
+
+
+            // 配置缺失的元数据
+            pom {
+                name = "netannotation"  // 项目名称
+                description = "运用编译时 注解生成代码，所用到的注解"  // 项目描述
+                url = "git@github.com:richzjc/st.git"  // 项目URL
+
+                // 开发者信息
+                developers {
+                    developer {
+                        id = "your_id"
+                        name = "Your Name"
+                        email = "your@email.com"
+                    }
+                }
+
+                // 开源协议
+                licenses {
+                    license {
+                        name = "The Apache License, Version 2.0"
+                        url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                    }
+                }
+
+                // SCM（版本控制地址）
+                scm {
+                    connection = "scm:git:git://github.com/example/mylibrary.git"
+                    developerConnection = "scm:git:ssh://github.com/example/mylibrary.git"
+                    url = "https://github.com/example/mylibrary"
+                }
+            }
+        }
+    }
+
+    repositories {
+
+        maven { url "file://${rootDir}/repo" }
+
+//        // 配置私有 Maven 仓库的 URL 和身份验证信息
+//        maven {
+//            url = uri('https://maven.wscn.net/repository/mobile-third/')
+//            credentials {
+//                username = properties.getProperty("userName")
+//                password = properties.getProperty("password")
+//            }
+//        }
+    }
+}
