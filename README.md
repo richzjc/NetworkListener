@@ -95,3 +95,15 @@ public class NetChanger implements SubscribeInfoIndex {
   }
 }
 ```
+
+---
+### 配置
+
+需要在使用到注解的module下面的build.gradle文件中，添加如下配置：
+```
+javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
+```
