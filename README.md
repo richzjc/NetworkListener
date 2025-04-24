@@ -20,3 +20,10 @@ https://zhuanlan.zhihu.com/p/1894702829630895262
 只需要通过一个注解就能实现相应的网络变化
 
 ---
+### 注解说明
+
+```
+@NetAvailable
+@NetLose
+@NetChange(net)
+```
