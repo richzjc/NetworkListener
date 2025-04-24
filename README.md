@@ -135,4 +135,14 @@ NetManager.init(this);
     }
 ```
 
+---
+### 添加混淆规则
+
+```
+-keepclasseswithmembernames class * {
+     @com.richzjc.netannotation.* <methods>;
+ }
+```
+
+若写得不对， 欢迎大家共同讨论！！！！
 
