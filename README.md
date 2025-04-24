@@ -107,3 +107,32 @@ javaCompileOptions {
             }
         }
 ```
+---
+### 初始化
+
+将各个模块下面生成的NetChanner类添加到NetManager中：
+```
+NetManager.addIndex(new NetChanger());
+NetManager.init(this);
+```
+
+---
+### 注册与取消注册
+
+在使用到注解的对应类里面，调用注册方法与取消注册方法，比如说在Activity里面：
+```
+@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        NetManager.bind(this);
+    }
+
+
+@Override
+    protected void onDestroy() {
+        super.onDestroy();
+        NetManager.unBind(this);
+    }
+```
+
+
