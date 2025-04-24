@@ -41,3 +41,24 @@ public enum NetType {
     AUTO, WIFI, MOBILE, NONE;
 }
 ```
+
+**AUTO** : 如果传入的参数是AUTO； 就相当于NetAvailable注解，监听到有网络
+**NONE** : 如果传入的参数是NONE； 就相当于NetLOSE注解，监听到无网络
+
+---
+### 示例代码
+```
+@NetLose
+public void test(){
+     //执行无网络的操作
+}
+
+@NetAvailable
+public void testl(){
+    //执行有网络的操作
+}
+
+@NetChange(netType =NetType.WIFI){
+    //网络变成WIFI后，执行相应的操作
+}
+```
