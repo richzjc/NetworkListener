@@ -1,8 +1,11 @@
-# 依赖
-
+### maven central的地址
+https://central.sonatype.com/search?q=io.github.richzjc
 ---
-```
+### 仓库
 mavenCentral()
+---
+### 依赖方式 
+```
 implementation 'io.github.richzjc:netannotation:1.0.0'
 implementation 'io.github.richzjc:network:1.0.0'
 kapt 'io.github.richzjc:netCompiler:1.0.0'
