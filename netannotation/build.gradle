@@ -4,7 +4,21 @@ apply plugin: 'java-library'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+tasks.withType(JavaCompile) {
+    options.compilerArgs += ["-Xlint:none", "-nowarn"]
+}
+// 生成源码 JAR
+task sourcesJar(type: Jar) {
+    from sourceSets.main.allJava
+    archiveClassifier = "sources"  // ✅ 替换为 archiveClassifier
+}
 
+
+// 生成 JavaDoc JAR
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    from javadoc.destinationDir
+    archiveClassifier = "javadoc"  // ✅ 替换为 archiveClassifier
 }
 
 apply plugin: 'maven-publish'
@@ -15,14 +29,15 @@ publishing {
         release(MavenPublication) {
             // 设置 groupId, artifactId, 版本等
             groupId = 'io.github.richzjc'
-            artifactId = 'net_annotation'
+            artifactId = 'netannotation'
             version = '1.0.0'
             // 指定发布 AAR 文件
             afterEvaluate {
                 // 发布 AAR 文件
                 artifact("$buildDir/libs/${project.name}.jar")
             }
-
+            artifact sourcesJar     // 包含源码
+            artifact javadocJar    // 包含文
 
             // 配置缺失的元数据
             pom {
