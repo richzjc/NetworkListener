@@ -1,4 +1,4 @@
-### 我的 maven central的地址
+### maven central的地址
 https://central.sonatype.com/search?q=io.github.richzjc
 ---
 ### 仓库
@@ -60,5 +60,38 @@ public void testl(){
 
 @NetChange(netType =NetType.WIFI){
     //网络变成WIFI后，执行相应的操作
+}
+```
+
+---
+### 实现原理
+
+基于APT注解处理器， 结合JavaPoet, 在编译时，动态生成类文件，可以下载工程自己跑一遍。
+
+---
+### 展示一下apt生成的类的源码
+```
+public class NetChanger implements SubscribeInfoIndex {
+  private static final Map<Class, SimpleSubscribeInfo> SUBSCRIBER_INDEX;
+
+  static {
+    SUBSCRIBER_INDEX = new HashMap<Class, SimpleSubscribeInfo>();
+    List<SubscribeMethod> availableList;
+    List<SubscribeMethod> loseList;
+    List<SubscribeMethod> changeList;
+    availableList = new ArrayList();
+    loseList = new ArrayList();
+    changeList = new ArrayList();
+    availableList.add(new SubscribeMethod("test1", null));
+    loseList.add(new SubscribeMethod("test", null));
+    changeList.add(new SubscribeMethod("test2", NetType.AUTO));
+    changeList.add(new SubscribeMethod("test3", NetType.WIFI));
+    SUBSCRIBER_INDEX.put(MainActivity.class, new SimpleSubscribeInfo(availableList, loseList, changeList));
+  }
+
+  @Override
+  public Map<Class, SimpleSubscribeInfo> getSubscriberInfo() {
+    return SUBSCRIBER_INDEX;
+  }
 }
 ```
